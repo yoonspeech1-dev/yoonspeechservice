@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한판면접 | 1:1 프리미엄 면접 컨설팅</title>
+    <title>한판면접 | 1:1 프리미엄 면접 컨설팅 소개</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -114,25 +114,8 @@
             font-size: clamp(1.125rem, 2.5vw, 1.5rem);
             color: var(--secondary);
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto;
             font-weight: 400;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--white);
-            padding: 16px 32px;
-            border-radius: 980px;
-            text-decoration: none;
-            font-size: 1.125rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .hero-cta:hover {
-            background: var(--accent-hover);
-            transform: scale(1.02);
         }
 
         /* Section Styles */
@@ -303,6 +286,11 @@
         .target-item p {
             font-size: 1.125rem;
             padding-top: 2px;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
         }
 
         /* About Section */
@@ -492,6 +480,20 @@
             font-weight: 700;
         }
 
+        /* Pricing Note */
+        .pricing-note {
+            text-align: center;
+            margin-top: 40px;
+            padding: 24px;
+            background: var(--bg-section);
+            border-radius: 16px;
+        }
+
+        .pricing-note p {
+            font-size: 1.125rem;
+            color: var(--secondary);
+        }
+
         /* FAQ Section */
         .faq-list {
             max-width: 800px;
@@ -567,6 +569,251 @@
 
         .faq-answer-content strong {
             color: var(--primary);
+        }
+
+        /* Application Form Section */
+        .application-section {
+            padding: 100px 24px;
+            background: var(--white);
+        }
+
+        .application-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .form-group .label-desc {
+            font-weight: 400;
+            font-size: 0.875rem;
+            color: var(--secondary);
+            margin-top: 4px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-option {
+            position: relative;
+            padding: 20px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover {
+            border-color: var(--accent);
+        }
+
+        .radio-option.selected {
+            border-color: var(--accent);
+            background: rgba(0, 113, 227, 0.05);
+        }
+
+        .radio-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-option-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .radio-custom {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option.selected .radio-custom {
+            border-color: var(--accent);
+        }
+
+        .radio-option.selected .radio-custom::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .radio-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .radio-text p {
+            font-size: 0.875rem;
+            color: var(--secondary);
+            line-height: 1.5;
+        }
+
+        /* Result Box */
+        .result-box {
+            display: none;
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--bg-section);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .result-box.show {
+            display: block;
+        }
+
+        .result-box h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .result-content {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            white-space: pre-line;
+            color: var(--primary);
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-copy {
+            flex: 1;
+            min-width: 140px;
+            padding: 16px 24px;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 980px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn-copy:hover {
+            background: var(--accent-hover);
+            transform: scale(1.02);
+        }
+
+        .btn-kakao {
+            flex: 1;
+            min-width: 140px;
+            padding: 16px 24px;
+            background: #FEE500;
+            color: #191919;
+            border: none;
+            border-radius: 980px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            font-family: inherit;
+        }
+
+        .btn-kakao:hover {
+            background: #F5DC00;
+            transform: scale(1.02);
+        }
+
+        .copy-notice {
+            display: none;
+            margin-top: 16px;
+            padding: 16px;
+            background: #e8f5e9;
+            border-radius: 12px;
+            color: #2e7d32;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .copy-notice.show {
+            display: block;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 18px 32px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 980px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .generate-btn:hover {
+            background: #333;
+            transform: scale(1.01);
         }
 
         /* CTA Section */
@@ -668,6 +915,18 @@
             .faq-answer-content {
                 padding: 0 20px 20px;
             }
+
+            .application-form {
+                padding: 32px 20px;
+            }
+
+            .application-section {
+                padding: 80px 20px;
+            }
+
+            .result-actions {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 480px) {
@@ -704,16 +963,15 @@
     <nav class="nav">
         <div class="nav-content">
             <a href="#" class="logo">한판면접</a>
-            <a href="http://pf.kakao.com/_xlReDd/chat" class="nav-cta" target="_blank">상담하기</a>
+            <a href="#application" class="nav-cta">상담 신청</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <span class="hero-label">Premium 1:1 Consulting</span>
-        <h1>한판면접<br><span>프리미엄 면접 컨설팅</span></h1>
+        <h1>한판면접<br><span>프리미엄 면접 컨설팅 소개</span></h1>
         <p class="hero-subtitle">의뢰인의 최종 합격까지 모든 과정을 책임집니다.<br>제대로 된 컨설팅을 통해 변화하고 싶다면 윤쌤과 함께하세요.</p>
-        <a href="http://pf.kakao.com/_xlReDd/chat" class="hero-cta" target="_blank">컨설팅 상담하기</a>
     </section>
 
     <!-- Quote -->
@@ -757,23 +1015,23 @@
             <div class="target-list">
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p>틀에 박힌 답변 말고, 진짜 나다움을 찾고 싶은 분</p>
+                    <p>틀에 박힌 답변 말고, <span class="highlight">진짜 나다움을 찾고 싶은</span> 분</p>
                 </div>
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p>단순한 스피치 스킬을 넘어 본질적인 가치를 증명하고 싶은 분</p>
+                    <p>단순한 스피치 스킬을 넘어 <span class="highlight">본질적인 가치를 증명</span>하고 싶은 분</p>
                 </div>
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p>억지로 꾸며진 모습보다 진정성 있게 면접관과 소통하고 싶은 분</p>
+                    <p>억지로 꾸며진 모습보다 <span class="highlight">진정성 있게 면접관과 소통</span>하고 싶은 분</p>
                 </div>
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p>즉각적으로 변화하고 싶은 분</p>
+                    <p><span class="highlight">즉각적으로 변화</span>하고 싶은 분</p>
                 </div>
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p>답변과 면접 실전 모두 컨설팅이 필요한 분</p>
+                    <p><span class="highlight">답변과 면접 실전 모두</span> 컨설팅이 필요한 분</p>
                 </div>
             </div>
         </div>
@@ -932,14 +1190,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <h2>지금 바로 상담을 시작하세요</h2>
-        <p>최종 합격까지, 윤쌤이 함께합니다</p>
-        <a href="http://pf.kakao.com/_xlReDd/chat" class="cta-button" target="_blank">컨설팅 상담하기</a>
+            <div class="pricing-note">
+                <p>과정 선택이 어려운 경우 편하게 카톡 채팅으로 상담을 요청해 주세요 ☺️</p>
+            </div>
+        </div>
     </section>
 
     <!-- FAQ Section -->
@@ -1011,11 +1266,141 @@
         </div>
     </section>
 
+    <!-- Application Form Section -->
+    <section class="application-section" id="application">
+        <div class="container">
+            <div class="section-header">
+                <h2>컨설팅 신청 상담하기</h2>
+                <p>아래 정보를 입력하시면 상담 메시지가 자동으로 생성됩니다</p>
+            </div>
+
+            <div class="application-form">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" placeholder="이름을 입력해 주세요">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">전화번호</label>
+                    <input type="tel" id="phone" placeholder="전화번호를 입력해 주세요">
+                </div>
+
+                <div class="form-group">
+                    <label for="company">지원 기업</label>
+                    <input type="text" id="company" placeholder="지원 기업을 입력해 주세요">
+                </div>
+
+                <div class="form-group">
+                    <label for="position">지원 직무</label>
+                    <input type="text" id="position" placeholder="지원 직무를 입력해 주세요">
+                </div>
+
+                <div class="form-group">
+                    <label for="interview-date">면접일</label>
+                    <p class="label-desc">면접일이 정해지지 않은 경우 '미정'으로 입력해 주세요.</p>
+                    <input type="text" id="interview-date" placeholder="예: 2025-03-15 또는 미정">
+                </div>
+
+                <div class="form-group">
+                    <label>희망 과정 선택</label>
+                    <div class="radio-group" id="course-group">
+                        <label class="radio-option" data-value="올케어(3회)">
+                            <input type="radio" name="course" value="올케어(3회)">
+                            <div class="radio-option-content">
+                                <div class="radio-custom"></div>
+                                <div class="radio-text">
+                                    <h4>올케어 (3회)</h4>
+                                    <p>95만 원 · 단기 집중 컨설팅</p>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-option" data-value="퍼펙트(5회)">
+                            <input type="radio" name="course" value="퍼펙트(5회)">
+                            <div class="radio-option-content">
+                                <div class="radio-custom"></div>
+                                <div class="radio-text">
+                                    <h4>퍼펙트 (5회)</h4>
+                                    <p>140만 원 · 역대 합격생 최다 선택</p>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-option" data-value="피니쉬(8회)">
+                            <input type="radio" name="course" value="피니쉬(8회)">
+                            <div class="radio-option-content">
+                                <div class="radio-custom"></div>
+                                <div class="radio-text">
+                                    <h4>피니쉬 (8회)</h4>
+                                    <p>200만 원 · 심화 면접 대비</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>컨설팅 방법</label>
+                    <div class="radio-group" id="method-group">
+                        <label class="radio-option" data-value="비대면(ZOOM 온라인)">
+                            <input type="radio" name="method" value="비대면(ZOOM 온라인)">
+                            <div class="radio-option-content">
+                                <div class="radio-custom"></div>
+                                <div class="radio-text">
+                                    <h4>비대면 (ZOOM 온라인)</h4>
+                                    <p>비대면 수업 전체 녹화본 제공</p>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-option" data-value="대면(연구소 방문)">
+                            <input type="radio" name="method" value="대면(연구소 방문)">
+                            <div class="radio-option-content">
+                                <div class="radio-custom"></div>
+                                <div class="radio-text">
+                                    <h4>대면 (연구소 방문)</h4>
+                                    <p>송파구 올림픽로374 인택올림픽파크뷰 (몽촌토성역 1분 거리)</p>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-option" data-value="대면·비대면 혼합">
+                            <input type="radio" name="method" value="대면·비대면 혼합">
+                            <div class="radio-option-content">
+                                <div class="radio-custom"></div>
+                                <div class="radio-text">
+                                    <h4>대면·비대면 혼합</h4>
+                                    <p>1~2회차 전략 컨설팅은 ZOOM으로 녹화본 제공, 실전 모의면접은 연구소 방문</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="available-time">컨설팅 가능한 요일 및 시간대</label>
+                    <p class="label-desc">컨설팅이 가능한 요일과 시간대를 전부 적어 주세요.</p>
+                    <textarea id="available-time" placeholder="예: 평일 저녁 7시 이후, 토요일 오전"></textarea>
+                </div>
+
+                <button type="button" class="generate-btn" onclick="generateMessage()">상담 메시지 생성하기</button>
+
+                <div class="result-box" id="result-box">
+                    <h4>상담 메시지가 생성되었습니다</h4>
+                    <div class="result-content" id="result-content"></div>
+                    <div class="result-actions">
+                        <button type="button" class="btn-copy" onclick="copyMessage()">메시지 복사하기</button>
+                        <a href="http://pf.kakao.com/_xlReDd/chat" target="_blank" class="btn-kakao">카카오톡 상담하기</a>
+                    </div>
+                    <div class="copy-notice" id="copy-notice">
+                        ✓ 메시지가 복사되었습니다! 카카오톡 채팅창에 붙여넣기 해 주세요.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="cta-section">
         <h2>변화할 준비가 되셨나요?</h2>
         <p>한판면접 프리미엄 컨설팅으로 최종 합격의 주인공이 되세요</p>
-        <a href="http://pf.kakao.com/_xlReDd/chat" class="cta-button" target="_blank">컨설팅 상담하기</a>
+        <a href="#application" class="cta-button">컨설팅 신청하기</a>
     </section>
 
     <!-- Footer -->
@@ -1031,17 +1416,78 @@
                 const faqItem = button.parentElement;
                 const isActive = faqItem.classList.contains('active');
 
-                // Close all FAQ items
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('active');
                 });
 
-                // Open clicked item if it wasn't active
                 if (!isActive) {
                     faqItem.classList.add('active');
                 }
             });
         });
+
+        // Radio button selection
+        document.querySelectorAll('.radio-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const group = this.closest('.radio-group');
+                group.querySelectorAll('.radio-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        // Generate message
+        function generateMessage() {
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const company = document.getElementById('company').value.trim();
+            const position = document.getElementById('position').value.trim();
+            const interviewDate = document.getElementById('interview-date').value.trim();
+            const courseRadio = document.querySelector('input[name="course"]:checked');
+            const methodRadio = document.querySelector('input[name="method"]:checked');
+            const availableTime = document.getElementById('available-time').value.trim();
+
+            if (!name || !phone || !company || !position || !interviewDate || !courseRadio || !methodRadio || !availableTime) {
+                alert('모든 항목을 입력해 주세요.');
+                return;
+            }
+
+            const message = `[한판면접 프리미엄 컨설팅 상담 신청]
+
+이름 : ${name}
+전화번호 : ${phone}
+지원 기업 : ${company}
+지원 직무 : ${position}
+면접일 : ${interviewDate}
+희망 과정 : ${courseRadio.value}
+컨설팅 방법 : ${methodRadio.value}
+가능한 요일/시간대 : ${availableTime}`;
+
+            document.getElementById('result-content').textContent = message;
+            document.getElementById('result-box').classList.add('show');
+            document.getElementById('copy-notice').classList.remove('show');
+
+            document.getElementById('result-box').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Copy message
+        function copyMessage() {
+            const message = document.getElementById('result-content').textContent;
+            navigator.clipboard.writeText(message).then(() => {
+                document.getElementById('copy-notice').classList.add('show');
+            }).catch(err => {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = message;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                document.getElementById('copy-notice').classList.add('show');
+            });
+        }
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
