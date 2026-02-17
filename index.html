@@ -886,22 +886,76 @@
             margin-bottom: 16px;
         }
 
+        /* Mobile line break helper */
+        .mobile-br {
+            display: none;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .mobile-br {
+                display: block;
+            }
+
             .hero {
                 padding: 120px 20px 80px;
             }
 
+            .hero h1 {
+                font-size: 2.25rem;
+                line-height: 1.3;
+            }
+
+            .hero-subtitle {
+                font-size: 1.05rem;
+                line-height: 1.7;
+            }
+
             .section {
-                padding: 80px 20px;
+                padding: 70px 20px;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+                line-height: 1.4;
+                margin-bottom: 12px;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+                line-height: 1.6;
             }
 
             .quote-section {
-                padding: 60px 20px;
+                padding: 50px 20px;
+            }
+
+            .quote {
+                font-size: 1.25rem;
+                line-height: 1.6;
             }
 
             .about-content {
-                padding: 40px 24px;
+                padding: 32px 20px;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
+            .about-highlight {
+                padding: 20px;
+                margin-top: 24px;
+            }
+
+            .about-highlight p {
+                font-size: 0.95rem;
+                line-height: 1.7;
             }
 
             .pricing-table-wrapper {
@@ -912,52 +966,201 @@
                 display: block;
             }
 
+            .pricing-card {
+                padding: 28px 20px;
+            }
+
+            .pricing-card-header h3 {
+                font-size: 1.35rem;
+            }
+
+            .pricing-card-header .price {
+                font-size: 1.75rem;
+            }
+
+            .pricing-card-body p {
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+
+            .pricing-note {
+                padding: 20px 16px;
+                margin-top: 32px;
+            }
+
+            .pricing-note p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
             .strength-card {
-                padding: 32px 24px;
+                padding: 28px 20px;
+            }
+
+            .strength-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .strength-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
 
             .care-item {
-                padding: 20px;
+                padding: 18px 16px;
+            }
+
+            .care-item span {
+                font-size: 0.95rem;
+            }
+
+            .target-item {
+                padding: 16px 0;
+                gap: 12px;
+            }
+
+            .target-item p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .check-icon {
+                width: 24px;
+                height: 24px;
+                font-size: 0.75rem;
+                margin-top: 2px;
             }
 
             .faq-question {
-                padding: 20px;
-                font-size: 1rem;
+                padding: 18px 16px;
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
 
             .faq-answer-content {
-                padding: 0 20px 20px;
+                padding: 0 16px 20px;
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .faq-answer-content li {
+                margin-bottom: 16px;
+                line-height: 1.7;
             }
 
             .application-form {
-                padding: 32px 20px;
+                padding: 28px 18px;
             }
 
             .application-section {
-                padding: 80px 20px;
+                padding: 70px 20px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+            }
+
+            .form-group .label-desc {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin-top: 4px;
+                margin-bottom: 8px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 14px;
+                font-size: 16px; /* Prevent iOS zoom */
+            }
+
+            .radio-option {
+                padding: 16px;
+            }
+
+            .radio-text h4 {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+            }
+
+            .radio-text p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+
+            .generate-btn {
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+
+            .result-box {
+                padding: 20px 16px;
+            }
+
+            .result-box h4 {
+                font-size: 1.05rem;
+                line-height: 1.5;
+            }
+
+            .result-content {
+                padding: 16px;
+                font-size: 0.9rem;
+                line-height: 1.7;
             }
 
             .result-actions {
                 flex-direction: column;
             }
 
+            .btn-kakao-main {
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+
+            .paste-guide {
+                font-size: 1rem;
+                margin-top: 16px;
+            }
+
             .shortcut-guide {
                 flex-direction: column;
                 gap: 8px;
+                margin-top: 12px;
             }
 
             .shortcut-item {
                 width: 100%;
                 text-align: center;
+                padding: 10px 12px;
+                font-size: 0.85rem;
             }
 
-            .paste-guide {
-                font-size: 1.05rem;
+            .cta-section {
+                padding: 70px 20px;
             }
 
-            .result-box h4 {
-                font-size: 1.1rem;
-                line-height: 1.5;
+            .cta-section h2 {
+                font-size: 1.5rem;
+                line-height: 1.4;
+            }
+
+            .cta-section p {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 24px;
+            }
+
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+
+            .footer {
+                padding: 40px 20px;
             }
         }
 
@@ -971,21 +1174,53 @@
             }
 
             .nav-cta {
-                padding: 8px 16px;
+                padding: 8px 14px;
                 font-size: 0.8rem;
             }
 
+            .hero {
+                padding: 110px 16px 60px;
+            }
+
+            .hero-label {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.85rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .section {
+                padding: 60px 16px;
             }
 
             .section-header h2 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
 
-            .cta-button {
-                padding: 16px 36px;
-                font-size: 1rem;
+            .quote {
+                font-size: 1.1rem;
+            }
+
+            .strength-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 1.5rem;
+            }
+
+            .care-icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .pricing-card.popular::before {
+                font-size: 0.7rem;
+                padding: 5px 12px;
             }
         }
     </style>
@@ -1003,12 +1238,12 @@
     <section class="hero">
         <span class="hero-label">Premium 1:1 Consulting</span>
         <h1>한판면접<br><span>프리미엄 면접 컨설팅 소개</span></h1>
-        <p class="hero-subtitle">의뢰인의 최종 합격까지 모든 과정을 책임집니다.<br>제대로 된 컨설팅을 통해 변화하고 싶다면 윤쌤과 함께하세요.</p>
+        <p class="hero-subtitle">의뢰인의 최종 합격까지<br class="mobile-br"> 모든 과정을 책임집니다.<br>제대로 된 컨설팅을 통해 변화하고 싶다면<br class="mobile-br"> 윤쌤과 함께하세요.</p>
     </section>
 
     <!-- Quote -->
     <section class="quote-section">
-        <p class="quote">면접의 본질은 정답 찾기가 아닌 가치 발견에 있습니다.</p>
+        <p class="quote">면접의 본질은<br class="mobile-br"> 정답 찾기가 아닌<br class="mobile-br"> 가치 발견에 있습니다.</p>
     </section>
 
     <!-- Strengths Section -->
@@ -1016,23 +1251,23 @@
         <div class="container">
             <div class="section-header">
                 <h2>컨설팅 강점</h2>
-                <p>윤소윤 대표의 10년 노하우가 담긴 체계적인 컨설팅</p>
+                <p>윤소윤 대표의 10년 노하우가 담긴<br class="mobile-br"> 체계적인 컨설팅</p>
             </div>
             <div class="strengths-grid">
                 <div class="strength-card">
                     <div class="strength-icon">👤</div>
                     <h3>1:1 밀착 컨설팅</h3>
-                    <p>윤소윤 대표가 직접 진행하는 프리미엄 맞춤형 컨설팅</p>
+                    <p>윤소윤 대표가 직접 진행하는<br class="mobile-br"> 프리미엄 맞춤형 컨설팅</p>
                 </div>
                 <div class="strength-card">
                     <div class="strength-icon">💎</div>
                     <h3>강점 및 컨셉 도출</h3>
-                    <p>자신에게 맞는 강점과 차별화된 컨셉을 발견합니다</p>
+                    <p>자신에게 맞는 강점과<br class="mobile-br"> 차별화된 컨셉을 발견합니다</p>
                 </div>
                 <div class="strength-card">
                     <div class="strength-icon">🎯</div>
                     <h3>올인원 프로그램</h3>
-                    <p>답변 컨설팅부터 스피치 트레이닝, 모의면접까지 한 번에</p>
+                    <p>답변 컨설팅부터 스피치 트레이닝,<br class="mobile-br"> 모의면접까지 한 번에</p>
                 </div>
             </div>
         </div>
@@ -1071,7 +1306,7 @@
 
     <!-- Quote 2 -->
     <section class="quote-section">
-        <p class="quote">외우지 않아도 어떤 질문에도 답변할 수 있게 됩니다.</p>
+        <p class="quote">외우지 않아도<br class="mobile-br"> 어떤 질문에도<br class="mobile-br"> 답변할 수 있게 됩니다.</p>
     </section>
 
     <!-- About Section -->
@@ -1096,7 +1331,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>컨설팅 이외 케어 시스템</h2>
-                <p>컨설팅 시간 외에도 지속적인 관리를 받을 수 있습니다</p>
+                <p>컨설팅 시간 외에도<br class="mobile-br"> 지속적인 관리를 받을 수 있습니다</p>
             </div>
             <div class="care-grid">
                 <div class="care-item">
@@ -1224,7 +1459,7 @@
             </div>
 
             <div class="pricing-note">
-                <p>과정 선택이 어려운 경우 편하게 카톡 채팅으로 상담을 요청해 주세요 ☺️</p>
+                <p>과정 선택이 어려운 경우<br class="mobile-br"> 편하게 카톡 채팅으로<br class="mobile-br"> 상담을 요청해 주세요 ☺️</p>
             </div>
         </div>
     </section>
@@ -1303,7 +1538,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>컨설팅 신청 상담하기</h2>
-                <p>아래 정보를 입력하시면 상담 메시지가 자동으로 생성됩니다</p>
+                <p>아래 정보를 입력하시면<br class="mobile-br"> 상담 메시지가 자동으로 생성됩니다</p>
             </div>
 
             <div class="application-form">
@@ -1329,7 +1564,7 @@
 
                 <div class="form-group">
                     <label for="interview-date">면접일</label>
-                    <p class="label-desc">면접일이 정해지지 않은 경우 '미정'으로 입력해 주세요.</p>
+                    <p class="label-desc">면접일이 정해지지 않은 경우<br class="mobile-br"> '미정'으로 입력해 주세요.</p>
                     <input type="text" id="interview-date" placeholder="예: 2025-03-15 또는 미정">
                 </div>
 
@@ -1388,7 +1623,7 @@
                                 <div class="radio-custom"></div>
                                 <div class="radio-text">
                                     <h4>대면 (연구소 방문)</h4>
-                                    <p>송파구 올림픽로374 인택올림픽파크뷰 (몽촌토성역 1분 거리)</p>
+                                    <p>송파구 올림픽로374 인택올림픽파크뷰<br class="mobile-br"> (몽촌토성역 1분 거리)</p>
                                 </div>
                             </div>
                         </label>
@@ -1398,7 +1633,7 @@
                                 <div class="radio-custom"></div>
                                 <div class="radio-text">
                                     <h4>대면·비대면 혼합</h4>
-                                    <p>1~2회차 전략 컨설팅은 ZOOM으로 녹화본 제공, 실전 모의면접은 연구소 방문</p>
+                                    <p>1~2회차 전략 컨설팅은 ZOOM으로 녹화본 제공,<br class="mobile-br"> 실전 모의면접은 연구소 방문</p>
                                 </div>
                             </div>
                         </label>
@@ -1407,7 +1642,7 @@
 
                 <div class="form-group">
                     <label for="available-time">컨설팅 가능한 요일 및 시간대</label>
-                    <p class="label-desc">컨설팅이 가능한 요일과 시간대를 전부 적어 주세요.</p>
+                    <p class="label-desc">컨설팅이 가능한 요일과 시간대를<br class="mobile-br"> 전부 적어 주세요.</p>
                     <textarea id="available-time" placeholder="예: 평일 저녁 7시 이후, 토요일 오전"></textarea>
                 </div>
 
@@ -1436,7 +1671,7 @@
     <!-- Final CTA -->
     <section class="cta-section">
         <h2>변화할 준비가 되셨나요?</h2>
-        <p>한판면접 프리미엄 컨설팅으로 최종 합격의 주인공이 되세요</p>
+        <p>한판면접 프리미엄 컨설팅으로<br class="mobile-br"> 최종 합격의 주인공이 되세요</p>
         <a href="#application" class="cta-button">컨설팅 신청하기</a>
     </section>
 
