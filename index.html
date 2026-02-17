@@ -780,20 +780,34 @@
         }
 
         .paste-guide {
-            margin-top: 16px;
+            margin-top: 20px;
             text-align: center;
-            color: var(--secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
         .paste-guide strong {
             color: var(--accent);
+            font-weight: 700;
         }
 
-        .paste-guide .shortcut {
+        .shortcut-guide {
+            margin-top: 12px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .shortcut-item {
+            display: inline-block;
+            padding: 8px 14px;
+            background: var(--bg-section);
+            border-radius: 8px;
             font-size: 0.85rem;
-            color: #999;
+            color: var(--secondary);
         }
 
         .generate-btn {
@@ -925,6 +939,25 @@
 
             .result-actions {
                 flex-direction: column;
+            }
+
+            .shortcut-guide {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .shortcut-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .paste-guide {
+                font-size: 1.05rem;
+            }
+
+            .result-box h4 {
+                font-size: 1.1rem;
+                line-height: 1.5;
             }
         }
 
@@ -1386,7 +1419,15 @@
                     <div class="result-actions">
                         <button type="button" class="btn-kakao-main" onclick="openKakao()">카카오톡 열고 붙여넣기</button>
                     </div>
-                    <p class="paste-guide">카카오톡이 열리면 채팅창에서 <strong>붙여넣기</strong> 해 주세요<br><span class="shortcut">PC: Ctrl+V / Mac: Cmd+V / 모바일: 길게 눌러 붙여넣기</span></p>
+                    <p class="paste-guide">
+                        카카오톡이 열리면<br>
+                        채팅창에서 <strong>붙여넣기</strong> 해 주세요
+                    </p>
+                    <p class="shortcut-guide">
+                        <span class="shortcut-item">PC: Ctrl+V</span>
+                        <span class="shortcut-item">Mac: Cmd+V</span>
+                        <span class="shortcut-item">모바일: 길게 눌러 붙여넣기</span>
+                    </p>
                 </div>
             </div>
         </div>
