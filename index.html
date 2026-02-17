@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한판면접 | 1:1 프리미엄 면접 컨설팅</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1d1d1f;
+            --secondary: #86868b;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --bg-light: #fbfbfd;
+            --bg-section: #f5f5f7;
+            --white: #ffffff;
+            --border: #d2d2d7;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--primary);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 24px 100px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 980px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--accent-hover);
+            transform: scale(1.02);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-alt {
+            background: var(--bg-section);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 80px 24px;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .quote {
+            font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+
+        .quote::before,
+        .quote::after {
+            content: '"';
+            color: var(--accent);
+        }
+
+        /* Strengths Grid */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .strength-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .strength-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent), #34c759);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 1.75rem;
+        }
+
+        .strength-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .strength-card p {
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        /* Care System */
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .care-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--white);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .care-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-section);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .care-item span {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Target List */
+        .target-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .target-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .target-item:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+            font-size: 0.875rem;
+        }
+
+        .target-item p {
+            font-size: 1.125rem;
+            padding-top: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            background: var(--white);
+            padding: 60px 48px;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .about-content h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--secondary);
+        }
+
+        .about-highlight {
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--bg-section);
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .about-highlight p {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        /* Pricing Table */
+        .pricing-table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            min-width: 800px;
+        }
+
+        .pricing-table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 20px 16px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .pricing-table td {
+            padding: 24px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table tr:hover td {
+            background: var(--bg-light);
+        }
+
+        .plan-name {
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: var(--primary);
+        }
+
+        .plan-popular {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 980px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .plan-price {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--accent);
+        }
+
+        /* Mobile Pricing Cards */
+        .pricing-cards {
+            display: none;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--accent);
+            position: relative;
+        }
+
+        .pricing-card.popular::before {
+            content: '가장 많이 선택';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 980px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pricing-card-header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-card-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card-header .sessions {
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        .pricing-card-header .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 16px;
+        }
+
+        .pricing-card-body h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-card-body p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card-body ul {
+            list-style: none;
+        }
+
+        .pricing-card-body li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .pricing-card-body li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* FAQ Section */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 28px;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-family: inherit;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+
+        .faq-answer-content {
+            padding: 0 28px 24px;
+            color: var(--secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .faq-answer-content ul {
+            margin: 16px 0;
+            padding-left: 20px;
+        }
+
+        .faq-answer-content li {
+            margin-bottom: 12px;
+        }
+
+        .faq-answer-content strong {
+            color: var(--primary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 24px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--white) 0%, var(--bg-section) 100%);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--secondary);
+            margin-bottom: 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 18px 48px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 113, 227, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(0, 113, 227, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px 80px;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+
+            .quote-section {
+                padding: 60px 20px;
+            }
+
+            .about-content {
+                padding: 40px 24px;
+            }
+
+            .pricing-table-wrapper {
+                display: none;
+            }
+
+            .pricing-cards {
+                display: block;
+            }
+
+            .strength-card {
+                padding: 32px 24px;
+            }
+
+            .care-item {
+                padding: 20px;
+            }
+
+            .faq-question {
+                padding: 20px;
+                font-size: 1rem;
+            }
+
+            .faq-answer-content {
+                padding: 0 20px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-content {
+                padding: 12px 16px;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-cta {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .cta-button {
+                padding: 16px 36px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="logo">한판면접</a>
+            <a href="http://pf.kakao.com/_xlReDd/chat" class="nav-cta" target="_blank">상담하기</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-label">Premium 1:1 Consulting</span>
+        <h1>한판면접<br><span>프리미엄 면접 컨설팅</span></h1>
+        <p class="hero-subtitle">의뢰인의 최종 합격까지 모든 과정을 책임집니다.<br>제대로 된 컨설팅을 통해 변화하고 싶다면 윤쌤과 함께하세요.</p>
+        <a href="http://pf.kakao.com/_xlReDd/chat" class="hero-cta" target="_blank">컨설팅 상담하기</a>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section">
+        <p class="quote">면접의 본질은 정답 찾기가 아닌 가치 발견에 있습니다.</p>
+    </section>
+
+    <!-- Strengths Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>컨설팅 강점</h2>
+                <p>윤소윤 대표의 10년 노하우가 담긴 체계적인 컨설팅</p>
+            </div>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <div class="strength-icon">👤</div>
+                    <h3>1:1 밀착 컨설팅</h3>
+                    <p>윤소윤 대표가 직접 진행하는 프리미엄 맞춤형 컨설팅</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">💎</div>
+                    <h3>강점 및 컨셉 도출</h3>
+                    <p>자신에게 맞는 강점과 차별화된 컨셉을 발견합니다</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">🎯</div>
+                    <h3>올인원 프로그램</h3>
+                    <p>답변 컨설팅부터 스피치 트레이닝, 모의면접까지 한 번에</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>이런 분께 추천합니다</h2>
+            </div>
+            <div class="target-list">
+                <div class="target-item">
+                    <div class="check-icon">✓</div>
+                    <p>틀에 박힌 답변 말고, 진짜 나다움을 찾고 싶은 분</p>
+                </div>
+                <div class="target-item">
+                    <div class="check-icon">✓</div>
+                    <p>단순한 스피치 스킬을 넘어 본질적인 가치를 증명하고 싶은 분</p>
+                </div>
+                <div class="target-item">
+                    <div class="check-icon">✓</div>
+                    <p>억지로 꾸며진 모습보다 진정성 있게 면접관과 소통하고 싶은 분</p>
+                </div>
+                <div class="target-item">
+                    <div class="check-icon">✓</div>
+                    <p>즉각적으로 변화하고 싶은 분</p>
+                </div>
+                <div class="target-item">
+                    <div class="check-icon">✓</div>
+                    <p>답변과 면접 실전 모두 컨설팅이 필요한 분</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote 2 -->
+    <section class="quote-section">
+        <p class="quote">외우지 않아도 어떤 질문에도 답변할 수 있게 됩니다.</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>한판면접이란?</h2>
+            </div>
+            <div class="about-content">
+                <p>한판면접은 면접에서 출제되는 질문에 대한 답변 소재를 <strong>A4 용지 한 장으로 정리</strong>할 수 있는 면접용 워크북입니다.</p>
+                <br>
+                <p>복잡한 면접 준비 과정을 체계화하여 단순화한 독보적인 커리큘럼으로, 워크북을 작성하고 나면 지원자의 성향, 강점, 경험이 한눈에 보이도록 정리됩니다.</p>
+                <div class="about-highlight">
+                    <p>이를 통해 약 <strong>80여 가지의 질문에 대본 없이 답변</strong>할 수 있게 됩니다. 10년간 연구한 면접에 가장 최적화된 워크북으로 자기 분석, 강점 발견을 통해 셀링 포인트를 명확하게 찾아 독보적인 설득력을 가질 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Care System -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>컨설팅 이외 케어 시스템</h2>
+                <p>컨설팅 시간 외에도 지속적인 관리를 받을 수 있습니다</p>
+            </div>
+            <div class="care-grid">
+                <div class="care-item">
+                    <div class="care-icon">💬</div>
+                    <span>컨설팅 이외 무제한 질문</span>
+                </div>
+                <div class="care-item">
+                    <div class="care-icon">🎬</div>
+                    <span>영상 피드백 (퍼펙트 이상)</span>
+                </div>
+                <div class="care-item">
+                    <div class="care-icon">🤖</div>
+                    <span>AI 모의면접</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>컨설팅 비용</h2>
+                <p>나에게 맞는 과정을 선택하세요</p>
+            </div>
+
+            <!-- Desktop Table -->
+            <div class="pricing-table-wrapper">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>과정</th>
+                            <th>회차 / 시간</th>
+                            <th>금액</th>
+                            <th>대상</th>
+                            <th>케어 서비스</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="plan-name">올케어</span>
+                            </td>
+                            <td>3회 / 회당 90분</td>
+                            <td><span class="plan-price">95만 원</span></td>
+                            <td>단기 집중 컨설팅 필요 시, 인성 집중, 강점 및 컨셉 도출, 면접이 얼마 남지 않은 경우 답변의 방향성 및 모의면접을 통한 점검이 필요한 경우</td>
+                            <td>무제한 질문<br>(컨설팅 기간 내)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="plan-name">퍼펙트</span>
+                                <br><span class="plan-popular">역대 합격생 최다 선택</span>
+                            </td>
+                            <td>5회 / 회당 90분</td>
+                            <td><span class="plan-price">140만 원</span></td>
+                            <td>강점 및 컨셉 도출, 답변 방향성 설정, 모의면접까지 철저한 준비를 희망하는 경우</td>
+                            <td>무제한 질문<br>(컨설팅 기간 내)<br>영상 피드백<br>한판면접 VOD 제공</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="plan-name">피니쉬</span>
+                            </td>
+                            <td>8회 / 회당 90분</td>
+                            <td><span class="plan-price">200만 원</span></td>
+                            <td>발표 불안으로 하드 스피치 트레이닝이 필요한 경우, 1~2차 면접을 모두 준비하는 경우, 지원 기업이 많은 경우, 심화 면접(PT, 토론 등)이 있는 경우</td>
+                            <td>무제한 질문<br>(컨설팅 기간 내)<br>영상 피드백<br>한판면접 VOD 제공</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Cards -->
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>올케어</h3>
+                        <p class="sessions">3회 / 회당 90분</p>
+                        <p class="price">95만 원</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <h4>대상</h4>
+                        <p>단기 집중 컨설팅 필요 시, 인성 집중, 강점 및 컨셉 도출, 면접이 얼마 남지 않은 경우</p>
+                        <h4>케어 서비스</h4>
+                        <ul>
+                            <li>무제한 질문 (컨설팅 기간 내)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="pricing-card-header">
+                        <h3>퍼펙트</h3>
+                        <p class="sessions">5회 / 회당 90분</p>
+                        <p class="price">140만 원</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <h4>대상</h4>
+                        <p>강점 및 컨셉 도출, 답변 방향성 설정, 모의면접까지 철저한 준비를 희망하는 경우</p>
+                        <h4>케어 서비스</h4>
+                        <ul>
+                            <li>무제한 질문 (컨설팅 기간 내)</li>
+                            <li>영상 피드백</li>
+                            <li>한판면접 VOD 제공</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>피니쉬</h3>
+                        <p class="sessions">8회 / 회당 90분</p>
+                        <p class="price">200만 원</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <h4>대상</h4>
+                        <p>발표 불안으로 하드 스피치 트레이닝이 필요한 경우, 1~2차 면접 모두 준비, 지원 기업이 많거나 심화 면접이 있는 경우</p>
+                        <h4>케어 서비스</h4>
+                        <ul>
+                            <li>무제한 질문 (컨설팅 기간 내)</li>
+                            <li>영상 피드백</li>
+                            <li>한판면접 VOD 제공</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>지금 바로 상담을 시작하세요</h2>
+        <p>최종 합격까지, 윤쌤이 함께합니다</p>
+        <a href="http://pf.kakao.com/_xlReDd/chat" class="cta-button" target="_blank">컨설팅 상담하기</a>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>자주 하는 질문</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">1:1 컨설팅은 어떻게 진행되나요?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>한판면접 프리미엄 컨설팅은 1:1 맞춤형으로 정형화된 커리큘럼을 벗어나 의뢰인을 직접 분석하고 부족한 부분을 위주로 컨설팅합니다.</p>
+                            <br>
+                            <p>1회차 컨설팅 후 커리큘럼 방향성을 안내드립니다. 의뢰인의 수준 및 상황에 따라 상이하나 일반적으로 <strong>1~3회 전략 컨설팅</strong>(컨셉 도출, 강점 선별, 답변, 스피치 트레이닝), <strong>3~5회 모의면접 및 실전 대비</strong>를 진행합니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">퍼펙트(5회)와 피니쉬(8회)는 어떤 차이가 있나요?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>컨설팅 회차가 많을수록 더 많은 경우의 수를 대비할 수 있습니다. 다룰 수 있는 질문의 개수가 월등히 많아 더 깊고 넓게 준비가 가능합니다.</p>
+                            <br>
+                            <p>컨설팅 시간 역시 피니쉬(8회) 과정이 더 많기 때문에 확실한 스킬업을 기대할 수 있습니다. 또한 <strong>심화 면접(PT, 토론, 상황 제시형 등)</strong>을 보는 기관에 지원하시는 경우 피니쉬를 선택하시면 다양한 전형을 모두 대비할 수 있습니다.</p>
+                            <br>
+                            <p>1차 직무 - 2차 인성(임원) 등으로 나눠져 있는 경우 이를 대비하기 위해 1차 직무 면접 4회 컨설팅 + 2차 인성(임원) 면접 4회 컨설팅 등으로 회차를 나눠 사용할 수 있습니다. 또는 지원 기업이 많은 경우 지원하는 기업에 맞춰 회차를 나눠 사용할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">컨설팅 주기는 어떻게 되나요?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>보통 <strong>주 1회</strong>가 가장 이상적이나, 상담을 통해 의뢰인 상황에 맞게 수업 주기를 선택하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">케어 서비스는 어떻게 진행되나요?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li><strong>영상 피드백</strong> : 스피치 영상을 촬영하여 컨설팅 이외의 시간에도 스피치 피드백을 받을 수 있는 케어 시스템입니다. 워킹 데이 기준으로 피드백을 진행합니다.</li>
+                                <li><strong>무제한 질문</strong> : 면접을 준비하며 궁금증이 생기면 더 이상 고민하지 않고, 언제든 윤쌤에게 질문할 수 있습니다. 면접 날까지 함께 고민하고 논의합니다.</li>
+                                <li><strong>AI 모의면접</strong> : 윤쌤이 직접 학습시킨 AI 모의면접 링크를 전달하여 면접관에게 질문을 받고 답변하는 형식으로 연습이 가능합니다.</li>
+                            </ul>
+                            <br>
+                            <p>강제적으로 매일 정해진 숙제가 나가는 것이 아닌, 의뢰인 상황에 맞는 과제를 제안하고 본인의 상황에 맞게 진도 및 분량을 조절하여 데일리 케어를 받게 됩니다. 케어 서비스는 의뢰인 선택 사항입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">컨설팅은 얼마 만에 소진해야 하나요?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>1년 안에 소진</strong>을 원칙으로 하며 1년 내 소진하지 않을 시 자동 소멸됩니다.</p>
+                            <br>
+                            <p>일정 기간 컨설팅을 진행하다 일신상의 이유로 홀드가 가능하며, 홀드 시 케어 서비스도 함께 멈추었다가 컨설팅 재개 시 다시 관리가 시작됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <h2>변화할 준비가 되셨나요?</h2>
+        <p>한판면접 프리미엄 컨설팅으로 최종 합격의 주인공이 되세요</p>
+        <a href="http://pf.kakao.com/_xlReDd/chat" class="cta-button" target="_blank">컨설팅 상담하기</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">한판면접</div>
+        <p>&copy; 2025 한판면접. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
