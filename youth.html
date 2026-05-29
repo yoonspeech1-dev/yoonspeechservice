@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한판면접 | 1:1 프리미엄 면접 컨설팅 소개</title>
+    <title>한판면접 | 청소년 면접·발표력 향상 컨설팅</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -67,6 +67,24 @@
             color: var(--primary);
             text-decoration: none;
             letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
         }
 
         .nav-cta {
@@ -262,7 +280,7 @@
         }
 
         .pricing-card.featured::before {
-            content: '역대 합격자 가장 많이 선택';
+            content: '가장 많이 선택한 과정';
             position: absolute;
             top: -14px;
             left: 50%;
@@ -910,6 +928,14 @@
                 font-size: 1.1rem;
             }
 
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-link {
+                font-size: 0.8rem;
+            }
+
             .nav-cta {
                 padding: 10px 16px;
                 font-size: 0.85rem;
@@ -1427,201 +1453,36 @@
                 padding-bottom: max(40px, env(safe-area-inset-bottom));
             }
         }
-
-        /* Landing Overlay - 성인/청소년 선택 화면 */
-        .landing-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, #fff 0%, var(--bg-light) 100%);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 24px;
-        }
-
-        .landing-overlay.hidden {
-            display: none;
-        }
-
-        .landing-content {
-            text-align: center;
-            max-width: 600px;
-        }
-
-        .landing-logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .landing-subtitle {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            margin-bottom: 48px;
-            line-height: 1.6;
-        }
-
-        .landing-title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 40px;
-        }
-
-        .landing-buttons {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .landing-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 220px;
-            height: 200px;
-            background: var(--white);
-            border: 2px solid var(--border);
-            border-radius: 24px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: var(--primary);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .landing-btn:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .landing-btn-icon {
-            font-size: 3.5rem;
-            margin-bottom: 16px;
-        }
-
-        .landing-btn-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-        }
-
-        @media (max-width: 768px) {
-            .landing-logo {
-                font-size: 1.8rem;
-                margin-bottom: 12px;
-            }
-
-            .landing-subtitle {
-                font-size: 1rem;
-                margin-bottom: 40px;
-            }
-
-            .landing-title {
-                font-size: 1.25rem;
-                margin-bottom: 32px;
-            }
-
-            .landing-buttons {
-                flex-direction: row;
-                gap: 16px;
-                width: 100%;
-            }
-
-            .landing-btn {
-                flex: 1;
-                width: auto;
-                height: auto;
-                min-height: 160px;
-                padding: 28px 16px;
-                border-radius: 20px;
-            }
-
-            .landing-btn-icon {
-                font-size: 3rem;
-                margin-bottom: 14px;
-            }
-
-            .landing-btn-title {
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .landing-logo {
-                font-size: 1.6rem;
-            }
-
-            .landing-title {
-                font-size: 1.1rem;
-            }
-
-            .landing-btn {
-                min-height: 140px;
-                padding: 24px 12px;
-            }
-
-            .landing-btn-icon {
-                font-size: 2.5rem;
-            }
-
-            .landing-btn-title {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Landing Overlay - 성인/청소년 선택 화면 -->
-    <div class="landing-overlay" id="landing-overlay">
-        <div class="landing-content">
-            <div class="landing-logo">한판면접</div>
-            <p class="landing-subtitle">1:1 프리미엄 면접 컨설팅</p>
-            <h1 class="landing-title">어떤 과정을 찾고 계신가요?</h1>
-            <div class="landing-buttons">
-                <div class="landing-btn" onclick="selectAdult()">
-                    <span class="landing-btn-icon">💼</span>
-                    <div class="landing-btn-title">성인 과정</div>
-                </div>
-                <a href="youth.html" class="landing-btn">
-                    <span class="landing-btn-icon">🎓</span>
-                    <div class="landing-btn-title">청소년 과정</div>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-content">
-            <a href="#" class="logo">한판면접</a>
-            <a href="#application" class="nav-cta">상담 신청</a>
+            <a href="index.html" class="logo">한판면접</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">성인 과정</a>
+                <a href="#application" class="nav-cta">상담 신청</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <span class="hero-badge">Premium 1:1 Consulting</span>
+        <span class="hero-badge">Youth 1:1 Consulting</span>
         <h1>
-            한판면접<br>프리미엄 컨설팅 소개
+            청소년 면접·발표력 향상<br class="mobile-br">
+            맞춤형 컨설팅
             <span class="hero-highlight">
-                의뢰인의 최종합격까지<br class="mobile-br">
-                강점 선정, 답변 방향성, 실전 스피치까지<br class="mobile-br">
-                모든 영역에서 윤쌤이 밀착 케어합니다.
+                중요한 기회를 앞둔 학생들을 위해<br class="mobile-br">
+                1:1 밀착 케어로<br class="mobile-br">
+                자기 표현력과 커뮤니케이션 역량을<br class="mobile-br">
+                체계적으로 향상시킵니다.
             </span>
         </h1>
         <p class="hero-subtitle">
-            제대로 된 컨설팅을 통해 변화하고 싶다면<br class="mobile-br">
-            윤쌤과 함께하세요.
+            자신감 있는 발표와 논리적인 답변 능력,<br class="mobile-br">
+            윤쌤과 함께 완성하세요.
         </p>
     </section>
 
@@ -1634,16 +1495,17 @@
             </div>
             <div class="curriculum-content">
                 <p class="curriculum-main">
-                    한판면접 컨설팅 커리큘럼은<br class="mobile-br">
-                    의뢰인마다 상이합니다.<br>
+                    청소년 컨설팅 커리큘럼은<br class="mobile-br">
+                    학생마다 상이합니다.<br>
                     ⭐️ 맞춤형 커리큘럼 ⭐️
                 </p>
                 <p class="curriculum-desc">
-                    정해진 커리큘럼에 맞춰<br class="mobile-br">
-                    진행하는 것이 아니라,<br class="mobile-br">
-                    의뢰인과 상담 후<br class="mobile-br">
-                    의뢰인에게 부족한 부분을 위주로<br class="mobile-br">
-                    커리큘럼이 정해집니다.
+                    면접 발표력 향상에 필요한<br class="mobile-br">
+                    학생 개인의 특성과 목표를 분석하여<br class="mobile-br">
+                    맞춤형 커리큘럼을 설계합니다.<br><br>
+                    자기 표현력, 논리적 사고력,<br class="mobile-br">
+                    커뮤니케이션 스킬까지<br class="mobile-br">
+                    1:1 밀착 케어로 체계적으로 관리합니다.
                 </p>
                 <div class="curriculum-note">
                     1회차 수업 후,<br class="mobile-br">
@@ -1659,58 +1521,58 @@
             <div class="section-header">
                 <span class="section-number">2</span>
                 <h2>컨설팅 비용</h2>
-                <p>나에게 맞는 과정을 선택하세요</p>
+                <p>목표에 맞는 과정을 선택하세요</p>
             </div>
 
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-card-header">
-                        <h3>올케어</h3>
-                        <p class="sessions">3회 · 회당 90분</p>
-                        <p class="price">95만 원</p>
+                        <h3>베이직</h3>
+                        <p class="sessions">1회 · 90분</p>
+                        <p class="price">50만 원</p>
                     </div>
                     <div class="pricing-card-body">
                         <h4>대상</h4>
-                        <p>· 단기 집중 컨설팅 필요 시<br>· 인성 집중, 강점 및 컨셉 도출<br>· 면접이 얼마 남지 않은 경우</p>
+                        <p>· 면접 기초 진단이 필요한 경우<br>· 자기 표현 방향성 점검<br>· 단기 피드백이 필요한 경우</p>
                         <h4>케어 서비스</h4>
                         <ul>
-                            <li>무제한 질문 (기간 내)</li>
+                            <li>1:1 맞춤 피드백</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="pricing-card featured">
                     <div class="pricing-card-header">
-                        <h3>퍼펙트</h3>
+                        <h3>올케어</h3>
                         <p class="sessions">5회 · 회당 90분</p>
-                        <p class="price">140만 원</p>
+                        <p class="price">150만 원</p>
                     </div>
                     <div class="pricing-card-body">
                         <h4>대상</h4>
-                        <p>· 강점 및 컨셉 도출<br>· 답변 방향성 설정<br>· 모의면접까지 철저한 준비 희망</p>
+                        <p>· 면접 및 발표 역량 집중 향상<br>· 논리적 답변 구성력 강화<br>· 모의 면접 실전 연습 희망</p>
                         <h4>케어 서비스</h4>
                         <ul>
                             <li>무제한 질문 (기간 내)</li>
                             <li>영상 피드백</li>
-                            <li>한판면접 VOD 제공</li>
+                            <li>모의면접 실전 연습</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="pricing-card">
                     <div class="pricing-card-header">
-                        <h3>피니쉬</h3>
+                        <h3>퍼펙트</h3>
                         <p class="sessions">8회 · 회당 90분</p>
                         <p class="price">200만 원</p>
                     </div>
                     <div class="pricing-card-body">
                         <h4>대상</h4>
-                        <p>· 하드 스피치 트레이닝 필요 시<br>· 1~2차 면접 모두 준비하는 경우<br>· 심화 면접(PT, 토론 등) 대비</p>
+                        <p>· 완벽한 발표력 완성 목표<br>· 심층 면접 대비 필요 시<br>· 다양한 상황별 맞춤 훈련 희망</p>
                         <h4>케어 서비스</h4>
                         <ul>
                             <li>무제한 질문 (기간 내)</li>
                             <li>영상 피드백</li>
-                            <li>한판면접 VOD 제공</li>
+                            <li>집중 모의면접 트레이닝</li>
                         </ul>
                     </div>
                 </div>
@@ -1733,61 +1595,62 @@
 
             <div class="application-form">
                 <div class="form-group">
-                    <label for="name">이름</label>
-                    <input type="text" id="name" placeholder="이름을 입력해 주세요">
+                    <label for="name">학생 이름</label>
+                    <input type="text" id="name" placeholder="학생 이름을 입력해 주세요">
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">전화번호</label>
-                    <input type="tel" id="phone" placeholder="전화번호를 입력해 주세요">
+                    <label for="phone">연락처 (학생)</label>
+                    <input type="tel" id="phone" placeholder="연락 가능한 전화번호를 입력해 주세요">
                 </div>
 
                 <div class="form-group">
-                    <label for="company">지원 기업</label>
-                    <input type="text" id="company" placeholder="지원 기업을 입력해 주세요">
+                    <label for="school">학교/학년</label>
+                    <input type="text" id="school" placeholder="예: OO고등학교 2학년">
                 </div>
 
                 <div class="form-group">
-                    <label for="position">지원 직무</label>
-                    <input type="text" id="position" placeholder="지원 직무를 입력해 주세요">
+                    <label for="goal">면접/발표 목표</label>
+                    <p class="label-desc">어떤 면접이나 발표를<br class="mobile-br"> 준비하고 계신지 알려주세요.</p>
+                    <input type="text" id="goal" placeholder="예: 학교 면접, 발표 대회 준비 등">
                 </div>
 
                 <div class="form-group">
-                    <label for="interview-date">면접일</label>
-                    <p class="label-desc">면접일이 정해지지 않은 경우<br class="mobile-br"> '미정'으로 입력해 주세요.</p>
-                    <input type="text" id="interview-date" placeholder="예: 2025-03-15 또는 미정">
+                    <label for="target-date">목표 일정</label>
+                    <p class="label-desc">일정이 정해지지 않은 경우<br class="mobile-br"> '미정'으로 입력해 주세요.</p>
+                    <input type="text" id="target-date" placeholder="예: 2025-03-15 또는 미정">
                 </div>
 
                 <div class="form-group">
                     <label>희망 과정 선택</label>
                     <div class="radio-group" id="course-group">
-                        <label class="radio-option" data-value="올케어(3회)">
-                            <input type="radio" name="course" value="올케어(3회)">
+                        <label class="radio-option" data-value="베이직(1회)">
+                            <input type="radio" name="course" value="베이직(1회)">
                             <div class="radio-option-content">
                                 <div class="radio-custom"></div>
                                 <div class="radio-text">
-                                    <h4>올케어 (3회)</h4>
-                                    <p>95만 원 · 단기 집중 컨설팅</p>
+                                    <h4>베이직 (1회)</h4>
+                                    <p>50만 원 · 기초 진단 및 방향성 점검</p>
                                 </div>
                             </div>
                         </label>
-                        <label class="radio-option" data-value="퍼펙트(5회)">
-                            <input type="radio" name="course" value="퍼펙트(5회)">
+                        <label class="radio-option" data-value="올케어(5회)">
+                            <input type="radio" name="course" value="올케어(5회)">
                             <div class="radio-option-content">
                                 <div class="radio-custom"></div>
                                 <div class="radio-text">
-                                    <h4>퍼펙트 (5회)</h4>
-                                    <p>140만 원 · 역대 합격생 최다 선택</p>
+                                    <h4>올케어 (5회)</h4>
+                                    <p>150만 원 · 가장 많이 선택하는 과정</p>
                                 </div>
                             </div>
                         </label>
-                        <label class="radio-option" data-value="피니쉬(8회)">
-                            <input type="radio" name="course" value="피니쉬(8회)">
+                        <label class="radio-option" data-value="퍼펙트(8회)">
+                            <input type="radio" name="course" value="퍼펙트(8회)">
                             <div class="radio-option-content">
                                 <div class="radio-custom"></div>
                                 <div class="radio-text">
-                                    <h4>피니쉬 (8회)</h4>
-                                    <p>200만 원 · 심화 면접 대비</p>
+                                    <h4>퍼펙트 (8회)</h4>
+                                    <p>200만 원 · 완벽한 발표력 완성</p>
                                 </div>
                             </div>
                         </label>
@@ -1823,7 +1686,7 @@
                                 <div class="radio-custom"></div>
                                 <div class="radio-text">
                                     <h4>대면·비대면 혼합</h4>
-                                    <p>1~2회차 전략 컨설팅은 ZOOM,<br class="mobile-br"> 실전 모의면접은 연구소 방문</p>
+                                    <p>상황에 따라 유연하게 진행</p>
                                 </div>
                             </div>
                         </label>
@@ -1874,8 +1737,8 @@
                 </div>
                 <div class="strength-card">
                     <div class="strength-icon">💎</div>
-                    <h3>강점 및 컨셉 도출</h3>
-                    <p>자신에게 맞는 강점과<br class="mobile-br"> 차별화된 컨셉을 발견합니다</p>
+                    <h3>강점 발굴 및 표현력 향상</h3>
+                    <p>학생만의 강점을 발굴하고<br class="mobile-br"> 자신감 있게 표현하는 법을 배웁니다</p>
                 </div>
                 <div class="strength-card">
                     <div class="strength-icon">🎯</div>
@@ -1886,7 +1749,7 @@
         </div>
     </section>
 
-    <!-- 5. Detail Section (한판면접이란 + 케어시스템) -->
+    <!-- 5. Detail Section -->
     <section class="section section-dark">
         <div class="container">
             <div class="section-header">
@@ -1895,23 +1758,22 @@
             </div>
             <div class="detail-content">
                 <div class="detail-card">
-                    <h3>한판면접이란?</h3>
+                    <h3>맞춤형 면접·발표 트레이닝</h3>
                     <p>
-                        한판면접은 면접에서 출제되는<br class="mobile-br">
-                        질문에 대한 답변 소재를<br class="mobile-br">
-                        <strong style="color: var(--white);">A4 용지 한 장으로 정리</strong>할 수 있는<br class="mobile-br">
-                        면접용 워크북입니다.
+                        한판면접 청소년 과정은<br class="mobile-br">
+                        학생 개인의 특성과 목표에 맞춰<br class="mobile-br">
+                        <strong style="color: var(--white);">체계적인 발표력 향상</strong>을<br class="mobile-br">
+                        목표로 합니다.
                     </p>
                     <br>
                     <p>
-                        복잡한 면접 준비 과정을<br class="mobile-br">
-                        체계화하여 단순화한 독보적인 커리큘럼으로,<br class="mobile-br">
-                        워크북을 작성하고 나면<br class="mobile-br">
-                        지원자의 성향, 강점, 경험이<br class="mobile-br">
-                        한눈에 보이도록 정리됩니다.
+                        자기소개, 지원 동기, 학업 계획 등<br class="mobile-br">
+                        다양한 질문에 대해<br class="mobile-br">
+                        논리적이고 자신감 있게<br class="mobile-br">
+                        답변하는 방법을 훈련합니다.
                     </p>
                     <div class="highlight-box">
-                        <p>이를 통해 약<br class="mobile-br"> <strong>80여 가지의 질문에<br class="mobile-br"> 대본 없이 답변</strong>할 수 있게 됩니다.</p>
+                        <p>면접관 앞에서도 당당하게<br class="mobile-br"> <strong>나만의 이야기</strong>를<br class="mobile-br"> 전달할 수 있게 됩니다.</p>
                     </div>
                 </div>
                 <div class="detail-card">
@@ -1921,21 +1783,21 @@
                         <div class="care-item">
                             <div class="care-icon">💬</div>
                             <span>무제한 질문</span>
-                            <span class="badge">전 과정</span>
+                            <span class="badge">올케어 이상</span>
                         </div>
                         <div class="care-item">
                             <div class="care-icon">🎬</div>
                             <span>영상 피드백</span>
-                            <span class="badge">퍼펙트 이상</span>
+                            <span class="badge">올케어 이상</span>
                         </div>
                         <div class="care-item">
-                            <div class="care-icon">📚</div>
-                            <span>VOD 제공</span>
-                            <span class="badge">퍼펙트 이상</span>
+                            <div class="care-icon">🎤</div>
+                            <span>모의면접 연습</span>
+                            <span class="badge">올케어 이상</span>
                         </div>
                         <div class="care-item">
-                            <div class="care-icon">🤖</div>
-                            <span>AI 모의면접</span>
+                            <div class="care-icon">📝</div>
+                            <span>답변 첨삭</span>
                             <span class="badge">전 과정</span>
                         </div>
                     </div>
@@ -1949,28 +1811,28 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">6</span>
-                <h2>이런 분께 추천합니다</h2>
+                <h2>이런 학생에게 추천합니다</h2>
             </div>
             <div class="target-list">
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p>틀에 박힌 답변 말고, <span class="highlight">진짜 나다움을 찾고 싶은</span> 분</p>
+                    <p><span class="highlight">중요한 면접</span>을 앞두고<br class="mobile-br"> 체계적인 준비가 필요한 학생</p>
                 </div>
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p>단순한 스피치 스킬을 넘어 <span class="highlight">본질적인 가치를 증명</span>하고 싶은 분</p>
+                    <p><span class="highlight">발표력과 자기표현력</span>을<br class="mobile-br"> 향상시키고 싶은 학생</p>
                 </div>
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p>억지로 꾸며진 모습보다<br class="mobile-br"> 진정성 있게 <span class="highlight">면접관과 소통</span>하고 싶은 분</p>
+                    <p>면접 상황에서<br class="mobile-br"> <span class="highlight">자신감 있게 답변</span>하고 싶은 학생</p>
                 </div>
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p><span class="highlight">즉각적으로 변화</span>하고 싶은 분</p>
+                    <p><span class="highlight">논리적인 사고력</span>과<br class="mobile-br"> 커뮤니케이션 역량을 키우고 싶은 학생</p>
                 </div>
                 <div class="target-item">
                     <div class="check-icon">✓</div>
-                    <p><span class="highlight">답변과 면접 실전 모두</span> 컨설팅이 필요한 분</p>
+                    <p><span class="highlight">1:1 밀착 케어</span>로<br class="mobile-br"> 확실하게 변화하고 싶은 학생</p>
                 </div>
             </div>
         </div>
@@ -1984,25 +1846,23 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question">1:1 컨설팅은 어떻게 진행되나요?</button>
+                    <button class="faq-question">청소년 컨설팅은 어떻게 진행되나요?</button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>한판면접 프리미엄 컨설팅은 1:1 맞춤형으로 정형화된 커리큘럼을 벗어나 의뢰인을 직접 분석하고 부족한 부분을 위주로 컨설팅합니다.</p>
+                            <p>한판면접 청소년 과정은 1:1 맞춤형으로 진행됩니다. 학생의 현재 발표력 수준과 목표를 분석한 후, 개인에게 맞는 커리큘럼을 설계합니다.</p>
                             <br>
-                            <p>1회차 컨설팅 후 커리큘럼 방향성을 안내드립니다. 의뢰인의 수준 및 상황에 따라 상이하나 일반적으로 <strong>1~3회 전략 컨설팅</strong>(컨셉 도출, 강점 선별, 답변, 스피치 트레이닝), <strong>3~5회 모의면접 및 실전 대비</strong>를 진행합니다.</p>
+                            <p>자기소개, 지원 동기, 학업 계획 등 다양한 질문에 대해 논리적으로 답변하는 방법을 훈련하고, 실전 모의면접을 통해 실력을 점검합니다.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">퍼펙트(5회)와 피니쉬(8회)는 어떤 차이가 있나요?</button>
+                    <button class="faq-question">올케어(5회)와 퍼펙트(8회)는 어떤 차이가 있나요?</button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>컨설팅 회차가 많을수록 더 많은 경우의 수를 대비할 수 있습니다. 다룰 수 있는 질문의 개수가 월등히 많아 더 깊고 넓게 준비가 가능합니다.</p>
+                            <p>회차가 많을수록 더 다양한 상황에 대비할 수 있습니다. 퍼펙트 과정에서는 더 많은 질문 유형을 다루고, 심층적인 모의면접 훈련이 가능합니다.</p>
                             <br>
-                            <p>컨설팅 시간 역시 피니쉬(8회) 과정이 더 많기 때문에 확실한 스킬업을 기대할 수 있습니다. 또한 <strong>심화 면접(PT, 토론, 상황 제시형 등)</strong>을 보는 기관에 지원하시는 경우 피니쉬를 선택하시면 다양한 전형을 모두 대비할 수 있습니다.</p>
-                            <br>
-                            <p>1차 직무 - 2차 인성(임원) 등으로 나눠져 있는 경우 이를 대비하기 위해 1차 직무 면접 4회 컨설팅 + 2차 인성(임원) 면접 4회 컨설팅 등으로 회차를 나눠 사용할 수 있습니다.</p>
+                            <p>또한 <strong>심층 면접이나 발표 대회</strong> 등 다양한 상황을 준비하는 경우 퍼펙트 과정을 추천드립니다.</p>
                         </div>
                     </div>
                 </div>
@@ -2011,7 +1871,7 @@
                     <button class="faq-question">컨설팅 주기는 어떻게 되나요?</button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>보통 <strong>주 1회</strong>가 가장 이상적이나, 상담을 통해 의뢰인 상황에 맞게 수업 주기를 선택하실 수 있습니다.</p>
+                            <p>보통 <strong>주 1회</strong>가 가장 이상적이나, 학생의 학업 일정에 맞춰 유연하게 조정 가능합니다.</p>
                         </div>
                     </div>
                 </div>
@@ -2021,10 +1881,10 @@
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <ul>
-                                <li><strong>영상 피드백</strong> : 스피치 영상을 촬영하여 컨설팅 이외의 시간에도 스피치 피드백을 받을 수 있는 케어 시스템입니다.</li>
-                                <li><strong>무제한 질문</strong> : 면접을 준비하며 궁금증이 생기면 언제든 윤쌤에게 질문할 수 있습니다.</li>
-                                <li><strong>AI 모의면접</strong> : 윤쌤이 직접 학습시킨 AI 모의면접 링크를 전달하여 연습이 가능합니다.</li>
-                                <li><strong>VOD 제공</strong> : 한판면접 강의 VOD를 제공하여 언제든 복습할 수 있습니다. (퍼펙트 이상)</li>
+                                <li><strong>영상 피드백</strong> : 발표 영상을 촬영하여 컨설팅 외 시간에도 피드백을 받을 수 있습니다.</li>
+                                <li><strong>무제한 질문</strong> : 준비 중 궁금한 점은 언제든 윤쌤에게 질문할 수 있습니다.</li>
+                                <li><strong>모의면접 연습</strong> : 실전과 동일한 환경에서 모의면접을 진행합니다.</li>
+                                <li><strong>답변 첨삭</strong> : 작성한 답변에 대해 꼼꼼한 첨삭을 받을 수 있습니다.</li>
                             </ul>
                         </div>
                     </div>
@@ -2036,7 +1896,7 @@
                         <div class="faq-answer-content">
                             <p><strong>1년 안에 소진</strong>을 원칙으로 하며 1년 내 소진하지 않을 시 자동 소멸됩니다.</p>
                             <br>
-                            <p>일정 기간 컨설팅을 진행하다 일신상의 이유로 홀드가 가능하며, 홀드 시 케어 서비스도 함께 멈추었다가 컨설팅 재개 시 다시 관리가 시작됩니다.</p>
+                            <p>학업 일정 등의 이유로 홀드가 가능하며, 홀드 시 케어 서비스도 함께 멈추었다가 컨설팅 재개 시 다시 관리가 시작됩니다.</p>
                         </div>
                     </div>
                 </div>
@@ -2051,20 +1911,6 @@
     </footer>
 
     <script>
-        // Landing Overlay - 성인 선택 시 오버레이 숨김
-        function selectAdult() {
-            document.getElementById('landing-overlay').classList.add('hidden');
-            // 선택 기억 (세션 동안)
-            sessionStorage.setItem('selectedCourse', 'adult');
-        }
-
-        // 페이지 로드 시 이전 선택 확인
-        window.addEventListener('DOMContentLoaded', function() {
-            if (sessionStorage.getItem('selectedCourse') === 'adult') {
-                document.getElementById('landing-overlay').classList.add('hidden');
-            }
-        });
-
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
@@ -2097,25 +1943,25 @@
         function generateMessage() {
             const name = document.getElementById('name').value.trim();
             const phone = document.getElementById('phone').value.trim();
-            const company = document.getElementById('company').value.trim();
-            const position = document.getElementById('position').value.trim();
-            const interviewDate = document.getElementById('interview-date').value.trim();
+            const school = document.getElementById('school').value.trim();
+            const goal = document.getElementById('goal').value.trim();
+            const targetDate = document.getElementById('target-date').value.trim();
             const courseRadio = document.querySelector('input[name="course"]:checked');
             const methodRadio = document.querySelector('input[name="method"]:checked');
             const availableTime = document.getElementById('available-time').value.trim();
 
-            if (!name || !phone || !company || !position || !interviewDate || !courseRadio || !methodRadio || !availableTime) {
+            if (!name || !phone || !school || !goal || !targetDate || !courseRadio || !methodRadio || !availableTime) {
                 alert('모든 항목을 입력해 주세요.');
                 return;
             }
 
-            const message = `[한판면접 프리미엄 컨설팅 상담 신청]
+            const message = `[한판면접 청소년 과정 상담 신청]
 
-이름 : ${name}
-전화번호 : ${phone}
-지원 기업 : ${company}
-지원 직무 : ${position}
-면접일 : ${interviewDate}
+학생 이름 : ${name}
+연락처 : ${phone}
+학교/학년 : ${school}
+면접/발표 목표 : ${goal}
+목표 일정 : ${targetDate}
 희망 과정 : ${courseRadio.value}
 컨설팅 방법 : ${methodRadio.value}
 가능한 요일/시간대 : ${availableTime}`;
